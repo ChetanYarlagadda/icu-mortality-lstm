@@ -1,0 +1,154 @@
+{
+  "started_utc": "2026-10-10T16:06:37+00:00",
+  "quick": false,
+  "settings": {
+    "split_seed": 0,
+    "val_share": 0.2,
+    "optuna_trials": 40,
+    "optuna_trials_challenge": 25,
+    "rnn_trials": 20,
+    "rnn_trials_challenge": 12,
+    "xgb_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "deep_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_boot": 1000,
+    "perm_repeats": 3,
+    "shap_check_rows": 200,
+    "subsample": 0
+  },
+  "base_train_config": {
+    "hidden": 64,
+    "dropout": 0.3,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 128,
+    "max_epochs": 30,
+    "patience": 5,
+    "grad_clip": 1.0
+  },
+  "tuned_train_config": {
+    "A+B": {
+      "hidden": 32,
+      "dropout": 0.1908077120691406,
+      "lr": 0.0011870978449636483,
+      "weight_decay": 0.0008937303546597119,
+      "batch_size": 256,
+      "max_epochs": 30,
+      "patience": 5,
+      "grad_clip": 1.0
+    },
+    "A": {
+      "hidden": 32,
+      "dropout": 0.06341782943176488,
+      "lr": 0.00035694627917197945,
+      "weight_decay": 2.7351784882815287e-06,
+      "batch_size": 128,
+      "max_epochs": 30,
+      "patience": 5,
+      "grad_clip": 1.0
+    }
+  },
+  "deep_specs": [
+    {
+      "name": "LSTM",
+      "kind": "lstm",
+      "use_values": true,
+      "use_process": true,
+      "use_static": true
+    },
+    {
+      "name": "GRU",
+      "kind": "gru",
+      "use_values": true,
+      "use_process": true,
+      "use_static": true
+    },
+    {
+      "name": "GRU-D",
+      "kind": "grud",
+      "use_values": true,
+      "use_process": true,
+      "use_static": true
+    },
+    {
+      "name": "GRU, values only",
+      "kind": "gru",
+      "use_values": true,
+      "use_process": false,
+      "use_static": true
+    },
+    {
+      "name": "GRU, measurement process only",
+      "kind": "gru",
+      "use_values": false,
+      "use_process": true,
+      "use_static": false
+    }
+  ],
+  "best_recurrent_model": "GRU",
+  "xgb_params": {
+    "A+B": {
+      "eta": 0.011484301300275515,
+      "max_depth": 3,
+      "min_child_weight": 2.612515025829702,
+      "subsample": 0.7685815772105595,
+      "colsample_bytree": 0.2267762081155873,
+      "lambda": 16.482572513259203,
+      "alpha": 0.0023710237159961112
+    },
+    "A": {
+      "eta": 0.04953901494245871,
+      "max_depth": 3,
+      "min_child_weight": 3.7798175037594173,
+      "subsample": 0.5608431044685809,
+      "colsample_bytree": 0.3892901201306592,
+      "lambda": 6.640207211675578,
+      "alpha": 0.06592294968989991
+    }
+  },
+  "shap_check_max_abs_diff": 0.0,
+  "timings_s": {
+    "download": 0.0,
+    "parse": 0.8,
+    "features": 0.0,
+    "hourly tensors": 1.2,
+    "logistic regression": 0.0,
+    "xgboost": 0.1,
+    "train lstm": 0.0,
+    "train gru": 0.2,
+    "train grud": 0.0,
+    "bootstrap": 10.3,
+    "permutation importance": 40.0,
+    "permutation importance (GPU)": 5.5
+  },
+  "gpu_stages": [
+    "permutation importance (GPU)",
+    "train gru",
+    "train grud",
+    "train lstm"
+  ],
+  "gpu_seconds": 5.7,
+  "total_seconds": 58.2,
+  "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "versions": {
+    "python": "3.12.10",
+    "torch": "2.11.0+cu128",
+    "xgboost": "3.4.1",
+    "optuna": "5.0.0",
+    "shap": "0.53.0",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3"
+  }
+}

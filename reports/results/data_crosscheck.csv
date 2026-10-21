@@ -1,0 +1,21 @@
+statistic,published,observed,match,note
+ICU stays,12000.0,12000.0,True,
+stays per set,4000.0,4000.0,True,
+"in-hospital mortality, all sets (%)",14.2,14.22,True,
+set A in-hospital mortality (%),13.85,13.85,True,
+"age, mean (years)",64.5,64.53,True,
+"age, SD (years)",17.1,17.18,True,
+female (%),43.8,43.84,True,12 stays without gender
+male (%),56.1,56.06,True,
+medical ICU (%),35.8,35.77,True,
+surgical ICU (%),28.4,28.4,True,
+cardiac surgery recovery unit (%),21.1,21.08,True,
+coronary care unit (%),21.1,14.74,False,published shares sum to 106.4%; the observed four sum to 100%
+"SAPS-I, mean",14.9,15.0,True,518 unknown (-1) excluded
+"SAPS-I, SD",5.2,5.21,True,
+"SOFA, mean",6.4,6.41,True,-1 codes included; without them 6.66
+"SOFA, SD",4.2,4.22,True,-1 codes included; without them 4.06
+"length of stay, mean (days)",13.4,13.42,True,-1 codes included; without them 13.62
+"length of stay, SD (days)",12.8,12.81,True,-1 codes included; without them 12.79
+time-series variables,37.0,37.0,True,
+stays whose death flag follows the documented survival/LOS rule,12000.0,11915.0,False,"85 deaths have Survival = 1 day, which the documentation rules out; the in-hospital death flag is used as recorded"

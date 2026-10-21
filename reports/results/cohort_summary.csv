@@ -1,0 +1,4 @@
+set,stays,deaths,mortality,age_mean,female_share,icu_coronary_care,icu_cardiac_surgery_recovery,icu_medical,icu_surgical,saps1_mean,mechvent_share,measurements_median,stays_without_time_series
+A,4000,554,0.1385,64.2475,0.43775,0.14425,0.2185,0.37025,0.267,14.961679790026247,0.63225,421.5,3
+B,4000,568,0.142,64.612,0.4355,0.1475,0.1955,0.359,0.298,14.929129755080771,0.62775,423.0,7
+C,4000,585,0.14625,64.7285,0.442,0.1505,0.2185,0.344,0.287,15.107720396452791,0.63525,424.0,2
