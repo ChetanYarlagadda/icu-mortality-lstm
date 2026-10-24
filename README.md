@@ -1,5 +1,7 @@
 # ICU Mortality from Irregular Vital-Sign Time Series
 
+[![CI](https://github.com/ChetanYarlagadda/icu-mortality-lstm/actions/workflows/ci.yml/badge.svg)](https://github.com/ChetanYarlagadda/icu-mortality-lstm/actions/workflows/ci.yml)
+
 **Do recurrent networks that read the raw, irregular first 48 hours of an ICU stay predict in-hospital death better
 than a gradient-boosted tree on simple summary statistics, and how much of the signal lies in *when* things were
 measured rather than in the values?** This project compares XGBoost and logistic regression on 341 summary features
@@ -302,6 +304,7 @@ scripts/         run_pipeline.py (all experiments), make_figures.py
 notebooks/       analysis.ipynb, the walkthrough with every table
 reports/         figures/ and results/ (every number quoted above)
 tests/           pytest suite (parsing and cleaning, metrics incl. the score.c formulas, features, models, explanations)
+.github/workflows/ CI: pyflakes and the pytest suite on CPU-only PyTorch (synthetic records, no PhysioNet download)
 ```
 
 ## License and citations
